@@ -1,0 +1,265 @@
+@charset "utf-8";
+
+/* gloabal css */
+body{
+	font-family:Helvetica;
+	font-size:14px;
+	line-height:1.6;
+	color:#666;
+	margin:0;
+}
+html{
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+[v-cloak]{display:none;}
+ul,ol{
+	margin:0;
+	padding:0;
+}
+li{list-style:none;}
+a:link,a:visited,a:hover,a:active{
+	color:#666;
+	text-decoration:none;
+}
+p{margin:0;}
+button,input{
+	-webkit-appearance:none;
+	background:none;
+	border:none;
+	outline:none;
+}
+
+
+#popup{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+#popup .overlay{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,.2);
+}
+#popup .content{
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	background:#fff;
+}
+#popup .content .srv-time-selector{}
+#popup .content .srv-time-selector .bar{}
+#popup .content .srv-time-selector .bar>h1{
+	text-align:center;
+	font-weight:normal;
+	margin:0;
+	font-size:14px;
+	color:#222;
+	height:42px;
+	line-height:42px;
+	border-bottom:1px solid #f0f0f0;
+}
+#popup .content .srv-time-selector .bar>i{}
+#popup .content .srv-time-selector .bd{}
+#popup .content .srv-time-selector .bd .header{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	width: 100%;
+	overflow: hidden;
+	background:#f7f7f7;
+}
+#popup .content .srv-time-selector .bd .header .data-picker{
+	overflow-x:auto;
+	overflow-y:visible;
+	-webkit-box-flex: 1;
+	-moz-flex: 1;
+	flex: 1;	
+}
+#popup .content .srv-time-selector .bd .header .data-picker .wrapper{
+	white-space:nowrap;
+}
+#popup .content .srv-time-selector .bd .header .data-picker .wrapper>button{
+	position:relative;
+	overflow:hidden;
+	border-bottom: 2px solid #f7f7f7;
+	margin-right: 1rem;
+	height: 50px;
+	text-align:center;
+}
+#popup .content .srv-time-selector .bd .header .data-picker .wrapper>button.appointment{
+	pointer-events:none;
+}
+#popup .content .srv-time-selector .bd .header .data-picker .wrapper>button.current,
+#popup .content .srv-time-selector .bd .header .data-picker .wrapper>button.current span{
+	color:#68c9d0;
+}
+#popup .content .srv-time-selector .bd .header .data-picker .wrapper>button.current:after{
+	position:absolute;
+	bottom:0;
+	content:'';
+	width:82%;
+	display:block;
+	height:2px;
+	background:#68c9d0;
+}
+#popup .content .srv-time-selector .bd .header .data-picker .wrapper>button>span{
+	display:block;
+	color:#999;
+	font-size:12px;
+}
+#popup .content .srv-time-selector .bd .header .cal{
+	flex:0 0 80px;
+	-webkit-box-flex: 0;
+  -ms-flex: 0 0 80px;	
+	width:80px;
+	border-left:1px solid #e6e6e6;
+	color:#999;
+}
+#popup .content .srv-time-selector .bd .header .cal img{
+	display:block;
+	margin:0 auto;
+}
+#popup .content .srv-time-selector .bd .header .cal>span{}
+#popup .content .srv-time-selector .bd .no-sel{
+	margin:10px;
+	padding:5px 0;
+	text-align:center;
+	border:1px solid #979797;
+	color:#979797;	
+}
+#popup .content .srv-time-selector .bd .no-sel.not-chose-time{
+	border:1px solid #68c9d0;
+	color:#68c9d0;
+	background:url(images/dagou_weici2_icon.png) no-repeat right bottom;
+}
+#popup .content .srv-time-selector .bd .no-sel p:first-child{
+	font-weight:bold;
+	font-size:14px;
+}
+#popup .content .srv-time-selector .bd .no-sel>p{
+	font-size:12px;
+}
+#popup .content .srv-time-selector .bd .hours{
+	margin:10px 10px 0;
+}
+#popup .content .srv-time-selector .bd .hours .wrapper{
+	height:184px;
+	overflow:auto;
+}
+#popup .content .srv-time-selector .bd .hours .wrapper>div button{
+	width:24.25%;
+	margin-right:1%;
+	margin-bottom:3px;
+	border:1px solid #68c9d0;
+	color:#999;
+	padding:10px 0;
+}
+#popup .content .srv-time-selector .bd .hours .wrapper>.chose-time button.chosed{
+	background:url(images/dagou_weici2_icon.png) no-repeat right bottom;
+}
+#popup .content .srv-time-selector .bd .hours .wrapper>div button.not-can-use{
+	background:#f7f7f7;
+	border:1px solid #979797;
+	pointer-events: none;
+}
+#popup .content .srv-time-selector .bd .hours .wrapper>div button:nth-child(4n){
+	margin-right:0;
+}
+#popup .content .srv-time-selector .bd .out{
+	border-top:1px solid #f0f0f0;
+	padding:5px 10px;	
+}
+#popup .content .srv-time-selector .bd .out>button.submit{
+	width:100%;
+	background:#68c9d0;
+	vertical-align:middle;
+	height:42px;
+	color:#fff;
+	font-size:16px;
+}
+
+
+#popup .content .srv-time-selector .bar{
+	position:relative;
+}
+#popup .content .srv-time-selector .bar h1{}
+#popup .content .srv-time-selector .bar img{
+	display:inline-block;
+	float:left;
+	margin-top:14px;
+	margin-left:10px;
+}
+#popup .content .srv-time-selector .bar-1 img{
+	position:absolute;
+	right:10px;
+	top:0;
+}
+#popup .content .srv-time-selector .bd{}
+#popup .content .srv-time-selector .bd .days-component{}
+#popup .content .srv-time-selector .bd .days-component .weekdays{
+	overflow:hidden;
+	background:#f7f7f7;
+	height:52px;
+	line-height:52px;
+}
+#popup .content .srv-time-selector .bd .days-component .weekdays .weekday{
+	float:left;
+	width:14%;
+	text-align:center;
+	color:#333;
+}
+#popup .content .srv-time-selector .bd .days-component .days-body{
+	color:#333;
+}
+#popup .content .srv-time-selector .bd .days-component .days-body .month{
+	text-align:center;
+	border-top:1px solid #e6e6e6;
+	border-bottom:1px solid #e6e6e6;
+	height:42px;
+	line-height:42px;
+}
+#popup .content .srv-time-selector .bd .days-component .days-body .days{
+	overflow:hidden;
+	padding:10px 0;
+}
+#popup .content .srv-time-selector .bd .days-component .days-body .day{
+	position:relative;
+	float:left;
+	width:14%;
+	height:30px;
+	line-height:30px;
+	text-align:center;	
+}
+#popup .content .srv-time-selector .bd .days-component .days-body .day span{
+	position:absolute;
+	bottom:0;
+	left:50%;
+	margin-left:-20px;
+	font-size:10px;
+	color:#999;
+	line-height:1;
+	display:block;
+}
+#popup .content .srv-time-selector .bd .days-component .days-body .day a{
+	display:block;
+	width:30px;
+	margin:0 auto;
+}
+#popup .content .srv-time-selector .bd .days-component .days-body .day.current a{
+	background:#69c9d1;
+	color:#fff;
+}
+#popup .content .srv-time-selector .bd .days-component .days-body .day.appointment{
+	pointer-events:none;
+}
+
+
+
+
+

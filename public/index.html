@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>智慧体育</title>
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_2031686_ktvohwbx1.css">
+</head>
+<body>
+  <noscript>
+    <strong>We're sorry but lk-demo doesn't work properly without JavaScript enabled. Please enable it to
+      continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+  <!-- <script type="text/javascript" src="//jssdk.yyhj.zjzwfw.gov.cn/jsbridge/v2.0.0/bridge.min.js"></script> 旧-->
+  <!-- <script type="text/javascript" src="//portal.zjzwfw.gov.cn/assets/jsbridge/1.0.0/jsbridge.js"></script> -->
+  <!-- <script
+    src="//webapi.amap.com/maps?v=1.4.15&key=6809d97fb8b57783134ed9c506baf50b&plugin=AMap.MarkerClusterer,AMap.MarkerClusterer">
+  </script> -->
+  <script type="text/javascript"
+        src="https://webapi.amap.com/maps?v=1.4.15&key=06941977a4c1eb8392a265151d523d8a&plugin=AMap.ToolBar"></script>
+  <script type="text/javascript" src="https://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js"></script>
+  <script type="text/javascript" src="//portal.zjzwfw.gov.cn/assets/jsbridge/1.0.0/jsbridge.js"></script>
+  <script type="text/javascript" src="//assets.zjzwfw.gov.cn/assets/ZWJSBridge/1.0.0/zwjsbridge.js"></script>
+  <!--城市大脑jssdk-->
+  <script type="text/javascript" src="https://app.citybrain.hangzhou.gov.cn/js/JSSdk-1.0.7.js"></script>
+  <!----浙里办埋点-->
+  <script type="text/javascript" src="//d.alicdn.com/alilog/mlog/aplus.js?id=202951085"></script>
+  <!-- 引入 echarts的 JS 文件 -->
+  <!-- <script src="https://lib.baomitu.com/echarts/5.1.2/echarts.common.min.js"></script> -->
+  <script> 
+  (function(w, d, s, q, i) {
+     w[q] = w[q] || []; 
+     var f = d.getElementsByTagName(s)[0],
+     j = d.createElement(s); 
+     j.async = true; 
+     j.id = 'beacon-aplus'; 
+     j.src = 'https://d.alicdn.com/alilog/mlog/aplus.js?id=202951085'; 
+     f.parentNode.insertBefore(j, f); 
+    })(window, document, 'script', 'aplus_queue'); 
+    // 如果是私有云部署还需要在上面那段 JS 后面紧接着添加日志域名埋点 
+    // 通常私有云日志服务端域名类似于：quickaplus-web-api.xxx.com.cn ，具体 域名需找交付同学要 
+    aplus_queue.push({ 
+          action: 'aplus.setMetaInfo',
+       arguments: ['aplus-rhost-v', 'alog.zjzwfw.gov.cn'] 
+      }); 
+      aplus_queue.push({ 
+           action: 'aplus.setMetaInfo', 
+        arguments: ['aplus-rhost-g', 'alog.zjzwfw.gov.cn'] 
+      }); 
+      // 这个会落到 app_key 字段上 
+      aplus_queue.push({ 
+       action: 'aplus.setMetaInfo',
+    arguments: ['appId', '60506758'] 
+    }); 
+    </script>
+</body>
+
+</html>

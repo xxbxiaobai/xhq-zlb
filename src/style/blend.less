@@ -1,0 +1,34 @@
+//======================
+//常用 混合方法
+//======================
+//伪元素 图标
+.icon(@img, @h: 1rem, @w: 1rem) {
+    content: "";
+    display: inline-block;
+    height: @h;
+    width: @w;
+    background: url(@img) no-repeat center;
+    background-size: 100%;
+}
+//伪元素 图标(absolute)
+.icon-absolute(@img, @h: 1rem, @w: 1rem) {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 1.25rem;
+    height: @h;
+    width: @w;
+    background: url(@img) no-repeat center;
+    background-size: 100%;
+    transform: translateY(-50%);
+}
+//背景图
+.img-background(@img) {
+     background: url(@img) no-repeat center;
+     background-size: cover;
+}
+//居中
+.cont-center() {
+    display: flex;
+    align-items: center;
+}

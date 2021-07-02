@@ -1,0 +1,126 @@
+<template>
+  <div>
+    <van-nav-bar title="健身圈" left-text="返回" left-arrow @click-left="onClickLeft"></van-nav-bar>
+    <div class="menu-list">
+      <ul class="menu-list-wrap">
+        <li class="menu-item">
+          <router-link to="/same-city/city" class="menu-wrap">
+            <div class="menu-item-box">
+              <p class="title">健身同城约</p>
+              <p class="sub-title">健身活动同城约起来</p>
+            </div>
+          </router-link>
+        </li>
+        <li class="menu-item">
+          <router-link to="/same-city/organization" class="menu-wrap">
+            <div class="menu-item-box">
+              <p class="title">体育社团</p>
+              <p class="sub-title">单项体育运动组织</p>
+            </div>
+          </router-link>
+        </li>
+        <li class="menu-item">
+          <router-link to="/same-city/crowd" class="menu-wrap">
+            <div class="menu-item-box">
+              <p class="title">健身群</p>
+              <p class="sub-title">同城小队健身更方便</p>
+            </div>
+          </router-link>
+        </li>
+      </ul>
+    </div>
+  </div>
+</template>
+<script>
+import { instructorGroup } from "@/http/api";
+import { zlbFun } from "@/util/Tool";
+import { mapGetters } from "vuex";
+export default {
+  name: "",
+  data() {
+    return {
+      name: "",
+      tel: "",
+      code: ""
+    };
+  },
+  methods: {
+    onClickLeft() {
+      window.location.href = "sxty://back"
+      this.$router.push("/");
+    }
+  },
+  destroyed() {
+    window.removeEventListener("popstate", this.onClickLeft, false);
+  },
+  mounted() {
+    if (window.history && window.history.pushState) {
+      history.pushState(null, null, document.URL);
+      window.addEventListener("popstate", this.onClickLeft, false);
+    }
+  },
+  computed: {
+    ...mapGetters(["userMsg", "userInformation"])
+  },
+  created() {
+    zlbFun("科学健身");
+    // console.log(this.userMsg)
+    let code = this.userInformation.mobile;
+    console.log(this.userInformation);
+    this.name = this.userInformation.realname;
+    this.tel = this.userInformation.mobile;
+    instructorGroup({ code }).then(res => {
+      console.log(res);
+      this.code = res.data;
+    });
+  }
+};
+</script>
+
+<style lang='less' rel='stylesheet/less' scoped>
+.menu-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 32px 15px 0 15px;
+  margin-top: 30px;
+  background-color: #f6f8f7;
+  .menu-item {
+    position: relative;
+    height: 108px;
+    overflow: hidden;
+    margin-bottom: 11px;
+    .menu-item-box {
+      margin-left: 10px;
+      margin-top: 37px;
+      .title {
+        margin-bottom: 7px;
+        font-size: 16px;
+        font-weight: 400;
+        color: rgba(51, 51, 51, 1);
+        line-height: 16px;
+      }
+      .sub-title {
+        font-size: 12px;
+        font-weight: 400;
+        color: rgba(102, 102, 102, 1);
+        line-height: 12px;
+      }
+    }
+    &:first-child {
+      background: url("../../assets/shtyzdy.png") center no-repeat;
+      background-size: 100%;
+    }
+    &:nth-child(2) {
+      background: url("../../assets/tyzdypx.png") center no-repeat;
+      background-size: 100%;
+    }
+    &:last-child {
+      background: url("../../assets/1a.png") center no-repeat;
+      background-size: 100%;
+    }
+  }
+}
+</style>

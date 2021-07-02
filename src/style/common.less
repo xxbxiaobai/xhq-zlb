@@ -1,0 +1,94 @@
+body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4,h5, h6, i, b, textarea, button, input, select, figure, figcaption{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-style: normal;
+  text-decoration: none;
+  border: none;
+  font-weight: normal;
+  font-family: "Microsoft Yahei", serif;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color:transparent;
+  -webkit-font-smoothing: antialiased;
+  &:hover{
+    outline: none;
+  }
+}
+a{
+  color: black;
+}
+html,body{
+  height: 100%;
+  width: 100%;
+  // background-color: #F5F5F5;
+}
+
+/* 根据dpr显示2x图/3x图 */
+.bg-image(@url){
+  background-image:~"url('@{url}@2x.png')";
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3){
+    background-image:~"url('@{url}@3x.png')";
+  }
+}
+
+
+// =======================================
+// 全局css --- rem 媒体查询
+// =======================================
+html {
+  font-size: 20px;
+}
+@media only screen and (min-width: 320px) {
+  html {
+    font-size: 17.75px !important;
+  }
+}
+@media only screen and (min-width: 360px) {
+  html {
+    font-size: 20px !important;
+  }
+}
+@media only screen and (min-width: 400px) {
+  html {
+    font-size: 21.33333333px !important;
+  }
+}
+@media only screen and (min-width: 414px) {
+  html {
+    font-size: 22.08px !important;
+  }
+}
+@media only screen and (min-width: 480px) {
+  html {
+    font-size: 25.6px !important;
+  }
+}
+
+// =======================================
+// 全局css --- 文本框 placeholder 提示颜色
+// =======================================
+#container /deep/ .van-nav-bar{
+z-index: 1000;
+}
+
+.placeholder {
+  color: #d8d8d8;
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  .placeholder;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  .placeholder;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  .placeholder;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  .placeholder;
+}

@@ -1,0 +1,22 @@
+/* 格式化组件myapplication里面的标签页组件 */
+#tab .van-tabs__wrap--scrollable .van-tab {
+  -webkit-box-flex: 0;
+  -ms-flex: 0;
+  flex: 0;
+}
+.eject .select .van-button--default{
+  border: none;
+}
+.eject .select .van-button--normal{
+  font-size: .9rem;
+  color: #333333;
+  font-family: "Microsoft Yahei", serif;
+}
+.eject .photograph .van-button--default{
+  border: none;
+}
+.eject .photograph .van-button--normal{
+  font-size: .9rem;
+  color: #333333;
+  font-family: "Microsoft Yahei", serif;
+}
